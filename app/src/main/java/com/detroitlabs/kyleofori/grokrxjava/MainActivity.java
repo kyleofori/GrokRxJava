@@ -1,17 +1,26 @@
 package com.detroitlabs.kyleofori.grokrxjava;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import rx.Observable;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    protected TextView firstTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        firstTextView = (TextView) findViewById(R.id.firstTextView);
+
+        Observable.just("Howdy, globe!")
+                .subscribe(s -> firstTextView.setText(s));
     }
 
 

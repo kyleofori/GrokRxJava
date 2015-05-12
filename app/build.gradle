@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -26,11 +30,6 @@ dependencies {
     //RxJava
     compile 'io.reactivex:rxjava:1.0.10'
 
-    //unit testing
-    androidTestCompile 'org.hamcrest:hamcrest-all:1.3'
-    androidTestCompile 'org.mockito:mockito-all:1.10.19'
-    androidTestCompile 'org.jmockit:jmockit:1.8'
-    androidTestCompile 'junit:junit:4.12'
-    androidTestCompile 'org.robolectric:robolectric:2.4'
-    androidTestCompile 'com.squareup:fest-android:1.0.8'
+    //unit tests
+    testCompile 'junit:junit:4.12'
 }
